@@ -1,0 +1,57 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs,XPMan, StdCtrls, ExtCtrls;
+
+type
+  TFrmJogo = class(TForm)
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    Button5: TButton;
+    Button6: TButton;
+    Button7: TButton;
+    Button8: TButton;
+    Button9: TButton;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    Panel4: TPanel;
+    XPManifest1: TXPManifest;
+    procedure JogoNovo;
+    procedure Verificar;
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmJogo: TFrmJogo;
+  Botao: array [1..9] of TButton;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrmJogo.FormCreate(Sender: TObject);
+  begin
+   Randomize;
+   Botao[1]:= Button1;
+   Botao[2]:= Button2;
+   Botao[3]:= Button3;
+   Botao[4]:= Button4;
+   Botao[5]:= Button5;
+   Botao[6]:= Button6;
+   Botao[7]:= Button7;
+   Botao[8]:= Button8;
+   Botao[9]:= Button9;
+   JogoNovo;
+  end;
+
+end.

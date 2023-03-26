@@ -1,0 +1,39 @@
+unit UPRINCIPAL;
+
+interface
+
+uses
+  SysUtils, Classes, DB, IBCustomDataSet, IBUpdateSQL, IBQuery, IBDatabase;
+
+type
+  TDTM = class(TDataModule)
+    IBDataMaterial: TIBDatabase;
+    IBTransMaterial: TIBTransaction;
+    QryMaterial: TIBQuery;
+    UpMaterial: TIBUpdateSQL;
+    DSMaterial: TDataSource;
+    QryGrupo: TIBQuery;
+    UpGrupo: TIBUpdateSQL;
+    DSGrupo: TDataSource;
+    QryGrupoCODIGOGRUPO: TIntegerField;
+    QryGrupoMATERIAL: TIBStringField;
+    QryGrupoMEDICAMENTO: TIBStringField;
+    QryGrupoNOME: TIBStringField;
+    QryMaterialCODIGOMATERIAL: TIntegerField;
+    QryMaterialCUSTOMEDIO: TIBBCDField;
+    QryMaterialNOME: TIBStringField;
+    QryMaterialPRECOCUSTO: TIBBCDField;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DTM: TDTM;
+
+implementation
+
+{$R *.dfm}
+
+end.

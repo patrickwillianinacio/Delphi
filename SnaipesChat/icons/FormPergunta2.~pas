@@ -1,0 +1,36 @@
+unit FormPergunta2;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ExtCtrls, StdCtrls, ComCtrls;
+
+type
+  TFrmPergunta2 = class(TForm)
+    ImgFundo2: TImage;
+    Tempo: TGroupBox;
+    Pontuacao: TGroupBox;
+    ProgressBar1: TProgressBar;
+    lbltempo: TLabel;
+    Label1: TLabel;
+    Label2: TLabel;
+    EdtAcertos: TEdit;
+    EdtErros: TEdit;
+    RdgResposta2: TRadioGroup;
+    BtnAvancar: TButton;
+    Tempo2: TTimer;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmPergunta2: TFrmPergunta2;
+
+implementation
+
+{$R *.dfm}
+
+end.

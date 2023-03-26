@@ -1,0 +1,479 @@
+inherited frmCadMaterial: TfrmCadMaterial
+  Left = 232
+  Top = 232
+  Caption = 'frmCadMaterial'
+  ClientHeight = 576
+  ClientWidth = 743
+  OldCreateOrder = True
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited pnlBotoes: TPanel
+    Width = 743
+    inherited sbtRelatorio: TSpeedButton
+      Glyph.Data = {
+        360C0000424D360C000000000000360000002800000020000000200000000100
+        180000000000000C0000C40E0000C40E00000000000000000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFF6F6F6EAEAEAE2E2E2DCDCDCD6D6D6D1D1D1CDCDCDCECACCA2C9B5A8C8
+        B8CFC3C9C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C3C3C3C5C5C5C6C6C6C9
+        C9C9CBCBCBCFCFCFD3D3D3D8D8D8DEDEDEE4E4E4EDEDEDFBFBFBFFFFFFFFFFFF
+        FFFFFFE4E4E4C7C7C7BDBDBDB9B9B9B4B4B4B1B0B0AEAEAEB0ABAD8BAF9D11C7
+        6E7CAB94B7A6AFA8A7A7A7A7A7A7A7A7A7A7A7A7A7A7A7A7A7A8A8A8AAA9A9AB
+        AAAAACACACAFAFAFB2B2B2B6B6B6BBBABABFBFBFCDCDCDF2F2F2FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFF9F9F9CCCDCDCACACAC9CACAC8C9C9C8C8C8D6C6CE24C7
+        7A13C56F79CAA3DAC4CFC5C6C6C5C6C6C5C6C6C5C6C6C5C6C6C6C6C6C6C7C7C7
+        C8C8C8C8C8C9C9C9CACACAC9CACAD5D5D5FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFB5B5B5BFB9BCC4BABFC8BAC0CABAC1CCBAC2D8B8C762C8
+        9A20C67816C67451C38DCFBAC4BEBCBDBBBCBCBBBBBBBBBBBBBBBBBBBBBBBBBB
+        BBBBBBBBBBBABBBBBABBBBBABBBBB6B7B7CBCBCBFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFF4F9C6B6BD98C1AE6BC49C4CC68E35C88527C97F25C97E2ACB
+        8224C97E25C97F1ACA7A39C887C3B4BBBFBBBDBEBEBEBFBFBFBFBFBFBFBFBFBE
+        BFBFBEBFBFBEBFBFBEBEBEBEBEBEBDBEBEB7B8B8FFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFF73DBAD12C97816CC7B1BCC7D1ECB7F20CB8022CB8022CB8023CB
+        8024CB8124CB8124CB811CCB7E29CF85CAC8C9BCB9BBB0B1B1ACADADB3B4B4B4
+        B5B5B4B5B5B3B4B4BBBCBCBFC0C0BFC0C0BABABAFFFFFFFFFFFFFFFFFFFFFFFF
+        D9F6EA0BC77616CA7C21CD8322CD8322CD8321CD8321CD8221CD8221CD8325CE
+        8622CD8422CD8322CD8322CD831BCC8016CE7FF2E2EAE1E3E4E1E2E3E0E1E2E0
+        E1E2E0E1E2E3E3E4C7C7C7C0C0C0C1C1C1BCBCBCFFFFFFFFFFFFFFFFFFF5FCF9
+        03C8751ECE8421CF8620CF851ECE841ACF8220D38924D58D22D38B1BCF841ECE
+        8421CF8621CF8621CF861ECE8320D38B2DD591E4C9C5CCBEB0D3CAC1D2C8BFD2
+        C8BFD2C8BFD6CDC6D1D2D3C1C1C1C2C3C3BDBEBEFFFFFFFFFFFFFFFFFF4FDAA1
+        17CF8320D1881ED08622D58D24DB9556D7A771D0AB79CCAB7BD2B07EDFBA31D4
+        931DD1871FD0871BD0851FDA9562D4A4F0E3E9E5E7EACDC1B6E4E7EAE2E4E5E2
+        E4E5E3E6E9D3C8BFD2D3D4C2C2C2C4C4C4BFBFBFFFFFFFFFFFFFFFFFFF00CC7A
+        1FD28A1DD2891ED89056D4A4CCC5C7D5C5CBD0C6CACDC4C8E6D9DFF0DCDE0AD0
+        801CD1871DD68E26D593AECDB3DDB7AED9D1CCD8D1CBC8B8A8D8D1CBD7CFC8D7
+        CFC8D7D0C9D2C7BCD4D5D6C4C5C5C6C7C7C1C2C2FFFFFFFFFFFFD2F6E809D081
+        1ED48C18D48A4FDBA7E1C5CFCAC8C9C8C8C8C8C8C8C4C4C4F3E7EC7DDDB60CD2
+        831CDC9864DFAEF6DFD9F2E0D8CCBEB1E0DEDCE0DEDCCCBEB0E0DEDCDEDBD8DE
+        DBD8DFDDDAD4CAC0D6D7D8C6C6C6C8C8C8C3C4C4FFFFFFFFFFFFC8F4E30CD387
+        1CD58D11D68CD0EEE2CBC6C8C9C9C9C9C9C9C9C9C9C8C8C8FFEFF611D88E24DF
+        9FA2C9ADFEDFDDE7DDD5E8E1D8CDBFB1E2E0DEE2E0DECDBFB2E2E0DEE0DDDAE0
+        DDDAE1DFDDD5CAC1D8D9DAC7C8C8C9C9C9C5C5C5FFFFFFFFFFFFE9FBF409D588
+        1BD78E05D485F5F5F5C9C6C8CACBCBCACBCBC9C9C9D9D5D7C7E9DD4AD99FF3E9
+        EDDDC8C1DCCEC0DBCEBFDDD0C2C9B8A8D9D1CAD9D1CAC9B8A8D9D1CAD7CFC6D7
+        CFC6D8D0C8D4CABEDADBDCC9C9C9CACACAC6C7C7FFFFFFFFFFFFFFFFFF27DC9C
+        15D68C09D689BEECDAD0C8CBCCCCCCCCCCCCC9C9C9E2E3E4DFD3CDF3DBD4EDED
+        EED7CDC3F3EFE9F0ECE6F3F0EAD3C8BDEFF2F6EFF2F5D3C7BDEFF2F5ECEEF1EC
+        EEF1EEF1F4D8CFC6DBDCDDCACACACBCCCCC8C8C8FFFFFFFFFFFFFFFFFFC3F5E2
+        0BDA9210D88C41D8A0DCCBD2CDCDCDCDCDCDC9C9C9EEF0F1D7CDC2D8C9B9E7E7
+        E6D4C9BDD3C2B1D2C3B2D4C4B4C5B3A1D3C7BBD3C7BBC6B3A1D3C7BBD1C5B8D1
+        C5B8D1C5B9D4C8BDDDDEDFCBCBCBCDCDCDC9C9C9FFFFFFFFFFFFFFFFFFFFFFFF
+        8FEDCC0ADC942ED798DFCDD4CECECECDCECECFCFCFF2F4F5D8C9BAF3EDE4EDED
+        EED9CFC4F4EFE8F2EDE5F4F0E9D4C9BEF2F6FAF2F6F9D4C9BEF2F6F9F0F2F4F0
+        F2F4F2F5F8DAD0C8DDDEDFCCCCCCCECECECACACAFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFB1F4DC29D99BDECDD3CFCFCFCDCECEDADADAF1F2F3D5CAC0D6C9BDEBEB
+        EBD5C9BED2C3B3D2C3B4D3C5B6C6B3A1D3C7BCD3C7BCC6B3A1D3C7BCD2C5B9D2
+        C5B9D2C5B9D5C9BDDFE0E1CDCDCDCFCFCFCBCCCCFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFEF7FACCCCCCD0D0D0CDCECEE4E4E4EEEEEEF0F1F4E7E5DEEBEB
+        EAD9CFC5F3EEE6F1ECE4F4EFE7D5C9BFF4F7FBF4F7FBD5C9BEF4F7FBF1F3F5F1
+        F3F5F3F6F9DBD1C8DFE0E1CECECED0D0D0CCCDCDFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFF8F7F7CCCCCCD1D1D1CDCDCDEEEEEEEDEDEDEFF2F7CDAF72E4DD
+        CED8CEC5D7CABBD9CCBFDBD0C5C6B4A4DAD2CADBD4CEC7B5A4DAD1CADAD1CAD9
+        CFC7D8CEC4D8CCC2E0E1E2CFCFCFD0D1D1CDCDCDFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFF6F6F6CDCDCDD1D1D1D5D5D5EFEFEFECECECEDEDEEEDEAE4ECEB
+        E8EFF0F2F0F2F5E6E3DBDCD3BFECEBE8E8E6E0DCD3BEEAE9E5EAE8E3DCD3BEEB
+        E7DFF7F8FBF8F9FAE1E1E1D0D0D0D1D1D1CDCDCDFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFF6F6F6CECECED1D2D2DBDBDBF5F5F5F0F0F0EDEDEDEDEDEEEBEB
+        ECEDEDEDEFF2F7D0B683B07B11DBCBABD6C29BAF7B11D8C6A2DBCBAAB37E14B8
+        A379B5B7BCB0B0B0B9B9B9D5D5D5D2D2D2CECECEFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFF6F6F6CFCFCFD3D3D3D1D1D1D5D5D5DFDFDFE9E9E9F1F1F1EDED
+        EDEDEDEDEDEDEEEEEDE9F1EEE6EEEDEBEEEDEBF1EEE6EDEDEBEEEDECFCF9F18A
+        8B8C6060606A6A6AD7D7D7D4D4D4D3D3D3CFCFCFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFF6F6F6CFCFCFD4D4D4D4D4D4D3D3D3D2D2D2D1D1D1CECECEEAEA
+        EAEDEDEDECECECEDEDEEEDEDEFEDEDEDEDEDEEEDEDEFEDEDEEECEDEDFAFBFC70
+        7070606060E1E1E1D5D5D5D4D4D4D3D3D3CFCFCFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFF6F6F6D3D3D3D3D3D3D4D4D4D4D4D4D4D4D4D4D4D4D2D2D2E8E8
+        E8F2F2F2F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1FCFCFC76
+        7676DEDEDED5D5D5D4D4D4D4D4D4D3D3D3D3D3D3FFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFBFBFBD8D8D8D6D6D6D3D3D3D3D3D3D3D3D3D3D3D3D3D3D3D1D1
+        D1D0D0D0D0D0D0D0D0D0D0D0D0D0D0D0D0D0D0D0D0D0D0D0D0D0D0D0D0D0D0DC
+        DCDCD4D4D4D3D3D3D3D3D3D3D3D3DADADADBDBDBFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFE9E9E9DADADADCDCDCDCDCDCDCDCDCDCDCDCDCDCDCDCDC
+        DCDCDCDCDCDCDCDCDCDCDCDCDCDCDCDCDCDCDCDCDCDCDCDCDCDCDCDCDCDCDCDC
+        DCDCDCDCDCDCDCDCDCDCDCDCDCDCD8D8D8F7F7F7FFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+    end
+  end
+  inherited pnlOrdemPesquisaFiltro: TPanel
+    Width = 743
+    inherited rgOrdem: TRadioGroup
+      Items.Strings = (
+        'Codigomaterial'
+        'Nome')
+      OnClick = rgOrdemClick
+    end
+    inherited grpPesquisa: TGroupBox
+      inherited rbCodigoPesq: TRadioButton
+        Width = 91
+        Caption = 'Codigomaterial'
+      end
+      inherited rbDescricaoPesq: TRadioButton
+        Left = 104
+        Caption = 'Nome'
+      end
+      inherited edtPesquisa: TEdit
+        OnChange = edtPesquisaChange
+      end
+    end
+    inherited grpFiltro: TGroupBox
+      inherited btnFiltro: TSpeedButton
+        Left = 180
+      end
+      inherited rbCodigoFiltro: TRadioButton
+        Width = 91
+        Caption = 'Codigomaterial'
+      end
+      inherited rbDescricaoFiltro: TRadioButton
+        Left = 104
+        Caption = 'Nome'
+      end
+    end
+  end
+  inherited pgcAbas: TPageControl
+    Width = 743
+    Height = 436
+    ActivePage = tbsTabela
+    inherited tbsFormulario: TTabSheet
+      object Label1: TLabel
+        Left = 13
+        Top = 9
+        Width = 33
+        Height = 13
+        Caption = 'C'#243'digo'
+        FocusControl = DBEdit1
+      end
+      object Label2: TLabel
+        Left = 13
+        Top = 49
+        Width = 28
+        Height = 13
+        Caption = 'Nome'
+        FocusControl = DBEdit2
+      end
+      object Label3: TLabel
+        Left = 13
+        Top = 89
+        Width = 102
+        Height = 13
+        Caption = 'PRECOBRASINDICE'
+        FocusControl = DBEdit3
+      end
+      object Label4: TLabel
+        Left = 13
+        Top = 129
+        Width = 57
+        Height = 13
+        Caption = 'Pre'#231'o custo'
+        FocusControl = DBEdit4
+      end
+      object Label5: TLabel
+        Left = 13
+        Top = 169
+        Width = 72
+        Height = 13
+        Caption = 'CUSTOMEDIO'
+        FocusControl = DBEdit5
+      end
+      object Label6: TLabel
+        Left = 13
+        Top = 209
+        Width = 29
+        Height = 13
+        Caption = 'Grupo'
+        FocusControl = DBLookupComboBox1
+      end
+      object Label7: TLabel
+        Left = 13
+        Top = 249
+        Width = 96
+        Height = 13
+        Caption = 'MT_PRECOCUSTO'
+        FocusControl = DBEdit6
+      end
+      object btnAdicionar: TButton
+        Left = 192
+        Top = 257
+        Width = 75
+        Height = 25
+        Caption = 'Adicionar'
+        Enabled = False
+        TabOrder = 0
+        OnClick = btnAdicionarClick
+      end
+      object btnRemover: TButton
+        Left = 192
+        Top = 283
+        Width = 75
+        Height = 25
+        Caption = 'Remover'
+        Enabled = False
+        TabOrder = 1
+        OnClick = btnRemoverClick
+      end
+      object DBEdit1: TDBEdit
+        Left = 13
+        Top = 25
+        Width = 134
+        Height = 21
+        DataField = 'CODIGOMATERIAL'
+        DataSource = dsRegistro
+        TabOrder = 2
+      end
+      object DBEdit2: TDBEdit
+        Left = 13
+        Top = 65
+        Width = 784
+        Height = 21
+        DataField = 'NOME'
+        DataSource = dsRegistro
+        TabOrder = 3
+      end
+      object DBEdit3: TDBEdit
+        Left = 13
+        Top = 105
+        Width = 251
+        Height = 21
+        DataField = 'PRECOBRASINDICE'
+        DataSource = dsRegistro
+        TabOrder = 4
+      end
+      object DBEdit4: TDBEdit
+        Left = 13
+        Top = 145
+        Width = 251
+        Height = 21
+        DataField = 'PRECOCUSTO'
+        DataSource = dsRegistro
+        TabOrder = 5
+      end
+      object DBEdit5: TDBEdit
+        Left = 13
+        Top = 185
+        Width = 251
+        Height = 21
+        DataField = 'CUSTOMEDIO'
+        DataSource = dsRegistro
+        TabOrder = 6
+      end
+      object DBLookupComboBox1: TDBLookupComboBox
+        Left = 13
+        Top = 225
+        Width = 534
+        Height = 21
+        DataField = 'GP_Nome'
+        DataSource = dsRegistro
+        TabOrder = 7
+      end
+      object DBEdit6: TDBEdit
+        Left = 13
+        Top = 265
+        Width = 134
+        Height = 21
+        DataField = 'MT_PRECOCUSTO'
+        DataSource = dsRegistro
+        TabOrder = 8
+      end
+    end
+    inherited tbsTabela: TTabSheet
+      inherited dbgDados: TDBGrid
+        Width = 735
+        Height = 407
+      end
+    end
+  end
+  object DBImage1: TDBImage [3]
+    Left = 272
+    Top = 136
+    Width = 17
+    Height = 25
+    BorderStyle = bsNone
+    TabOrder = 3
+    Visible = False
+  end
+  inherited dsRegistro: TDataSource
+    DataSet = qryMaterial
+    OnStateChange = dsRegistroStateChange
+  end
+  inherited imglAbas: TImageList
+    Left = 232
+  end
+  object sqlAI: TIBSQL
+    Database = frmPrincipal.dbMaterial
+    Transaction = frmPrincipal.tstMaterial
+    Left = 298
+    Top = 136
+  end
+  object udpMaterial: TIBUpdateSQL
+    RefreshSQL.Strings = (
+      'Select '
+      'from material '
+      'where'
+      '  CODIGOMATERIAL = :CODIGOMATERIAL and'
+      '  NOME = :NOME and'
+      '  CODIGOGRUPO = :CODIGOGRUPO and'
+      '  PRECOBRASINDICE = :PRECOBRASINDICE and'
+      '  PRECOCUSTO = :PRECOCUSTO and'
+      '  CUSTOMEDIO = :CUSTOMEDIO and'
+      '  NOMECOMPLETO = :NOMECOMPLETO and'
+      '  TIPOMATERIAL = :TIPOMATERIAL')
+    ModifySQL.Strings = (
+      'update material'
+      'set'
+      '  CODIGOMATERIAL = :CODIGOMATERIAL,'
+      '  NOME = :NOME,'
+      '  CODIGOGRUPO = :CODIGOGRUPO,'
+      '  PRECOBRASINDICE = :PRECOBRASINDICE,'
+      '  PRECOCUSTO = :PRECOCUSTO,'
+      '  CUSTOMEDIO = :CUSTOMEDIO,'
+      '  NOMECOMPLETO = :NOMECOMPLETO,'
+      '  TIPOMATERIAL = :TIPOMATERIAL'
+      'where'
+      '  CODIGOMATERIAL = :OLD_CODIGOMATERIAL and'
+      '  NOME = :OLD_NOME and'
+      '  CODIGOGRUPO = :OLD_CODIGOGRUPO and'
+      '  PRECOBRASINDICE = :OLD_PRECOBRASINDICE and'
+      '  PRECOCUSTO = :OLD_PRECOCUSTO and'
+      '  CUSTOMEDIO = :OLD_CUSTOMEDIO and'
+      '  NOMECOMPLETO = :OLD_NOMECOMPLETO and'
+      '  TIPOMATERIAL = :OLD_TIPOMATERIAL')
+    InsertSQL.Strings = (
+      'insert into material'
+      
+        '  (CODIGOMATERIAL, NOME, CODIGOGRUPO, PRECOBRASINDICE, PRECOCUST' +
+        'O, CUSTOMEDIO, '
+      '   NOMECOMPLETO, TIPOMATERIAL)'
+      'values'
+      
+        '  (:CODIGOMATERIAL, :NOME, :CODIGOGRUPO, :PRECOBRASINDICE, :PREC' +
+        'OCUSTO, '
+      '   :CUSTOMEDIO, :NOMECOMPLETO, :TIPOMATERIAL)')
+    DeleteSQL.Strings = (
+      'delete from material'
+      'where'
+      '  CODIGOMATERIAL = :OLD_CODIGOMATERIAL and'
+      '  NOME = :OLD_NOME and'
+      '  CODIGOGRUPO = :OLD_CODIGOGRUPO and'
+      '  PRECOBRASINDICE = :OLD_PRECOBRASINDICE and'
+      '  PRECOCUSTO = :OLD_PRECOCUSTO and'
+      '  CUSTOMEDIO = :OLD_CUSTOMEDIO and'
+      '  NOMECOMPLETO = :OLD_NOMECOMPLETO and'
+      '  TIPOMATERIAL = :OLD_TIPOMATERIAL')
+    Left = 330
+    Top = 136
+  end
+  object qryMaterial: TIBQuery
+    Database = frmPrincipal.dbMaterial
+    Transaction = frmPrincipal.tstMaterial
+    AfterDelete = qryMaterialAfterDelete
+    AfterPost = qryMaterialAfterPost
+    BeforeDelete = qryMaterialBeforeDelete
+    OnCalcFields = qryMaterialCalcFields
+    OnNewRecord = qryMaterialNewRecord
+    OnPostError = qryMaterialPostError
+    Active = True
+    BufferChunks = 1000
+    CachedUpdates = False
+    SQL.Strings = (
+      'select * from material order by codigomaterial')
+    UpdateObject = udpMaterial
+    Left = 362
+    Top = 136
+    object qryMaterialGP_Nome: TIBStringField
+      DisplayLabel = 'Grupo'
+      FieldKind = fkLookup
+      FieldName = 'GP_Nome'
+      LookupDataSet = qryGrupo
+      LookupKeyFields = 'nomecomPLETO'
+      LookupResultField = 'nomecomPLETO'
+      KeyFields = 'nomecomPLETO'
+      Size = 40
+      Lookup = True
+    end
+    object qryMaterialMT_PRECOCUSTO: TCurrencyField
+      DisplayLabel = 'Custo Total'
+      FieldKind = fkCalculated
+      FieldName = 'MT_PRECOCUSTO'
+      Calculated = True
+    end
+    object qryMaterialCODIGOMATERIAL: TIntegerField
+      FieldName = 'CODIGOMATERIAL'
+      Origin = '"MATERIAL"."CODIGOMATERIAL"'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object qryMaterialNOME: TIBStringField
+      FieldName = 'NOME'
+      Origin = '"MATERIAL"."NOME"'
+      Size = 60
+    end
+    object qryMaterialCODIGOGRUPO: TIntegerField
+      FieldName = 'CODIGOGRUPO'
+      Origin = '"MATERIAL"."CODIGOGRUPO"'
+    end
+    object qryMaterialPRECOBRASINDICE: TIBBCDField
+      FieldName = 'PRECOBRASINDICE'
+      Origin = '"MATERIAL"."PRECOBRASINDICE"'
+      Precision = 18
+      Size = 2
+    end
+    object qryMaterialPRECOCUSTO: TIBBCDField
+      FieldName = 'PRECOCUSTO'
+      Origin = '"MATERIAL"."PRECOCUSTO"'
+      Precision = 18
+      Size = 4
+    end
+    object qryMaterialCUSTOMEDIO: TIBBCDField
+      FieldName = 'CUSTOMEDIO'
+      Origin = '"MATERIAL"."CUSTOMEDIO"'
+      Precision = 18
+      Size = 2
+    end
+    object qryMaterialTIPOMATERIAL: TSmallintField
+      FieldName = 'TIPOMATERIAL'
+      Origin = '"MATERIAL"."TIPOMATERIAL"'
+    end
+    object qryMaterialNOMECOMPLETO: TIBStringField
+      FieldName = 'NOMECOMPLETO'
+      Origin = '"MATERIAL"."NOMECOMPLETO"'
+      Size = 200
+    end
+  end
+  object qryGrupo: TIBQuery
+    Database = frmPrincipal.dbMaterial
+    Transaction = frmPrincipal.tstMaterial
+    Active = True
+    BufferChunks = 1000
+    CachedUpdates = False
+    SQL.Strings = (
+      'select * from materialhistorico order by codigomaterialhistorico')
+    Left = 394
+    Top = 136
+  end
+  object opdFoto: TOpenDialog
+    FileName = 
+      'C:\Users\root\Desktop\Tarefas\Testes\Projeto Piloto\imagens\depo' +
+      'sitphotos_178385820-stock-illustration-toggle-buttons-vector-ico' +
+      'n.jpg'
+    Filter = '(*.jpg;*.jpeg;*.bmp)|*.jpg;*.jpeg;*.bmp|Foto'
+    InitialDir = '.'
+    Left = 444
+    Top = 133
+  end
+end

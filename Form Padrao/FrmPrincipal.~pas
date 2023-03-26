@@ -1,0 +1,226 @@
+unit FrmPrincipal;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ComCtrls, ImgList, DB, ExtCtrls, ToolWin, Menus, DBCtrls;
+
+type
+  TForm1 = class(TForm)
+    TBPadrao: TToolBar;
+    PnlPadrao: TPanel;
+    DSPadrao: TDataSource;
+    IlPadrao: TImageList;
+    BtnEditar: TToolButton;
+    BtnDeletar: TToolButton;
+    BtnCancelar: TToolButton;
+    BtnPesquisa: TToolButton;
+    BtnPrimeiro: TToolButton;
+    BtnAnterior: TToolButton;
+    BtnPosterior: TToolButton;
+    BtnUltimo: TToolButton;
+    MainMenu1: TMainMenu;
+    Novo1: TMenuItem;
+    Gravar1: TMenuItem;
+    Editar1: TMenuItem;
+    Deletar1: TMenuItem;
+    Cancelar1: TMenuItem;
+    Pesquisa1: TMenuItem;
+    Primeiro1: TMenuItem;
+    Anterior1: TMenuItem;
+    Anterior2: TMenuItem;
+    Posterior1: TMenuItem;
+    ltimo1: TMenuItem;
+    N1: TMenuItem;
+    N2: TMenuItem;
+    N3: TMenuItem;
+    N4: TMenuItem;
+    N5: TMenuItem;
+    N6: TMenuItem;
+    N7: TMenuItem;
+    N8: TMenuItem;
+    N9: TMenuItem;
+    BtnNovo: TToolButton;
+    BtnGravar: TToolButton;
+    procedure BtnNovoClick(Sender: TObject);
+    procedure BtnGravarClick(Sender: TObject);
+    procedure BtnEditarClick(Sender: TObject);
+    procedure BtnDeletarClick(Sender: TObject);
+    procedure BtnCancelarClick(Sender: TObject);
+    procedure BtnPrimeiroClick(Sender: TObject);
+    procedure BtnAnteriorClick(Sender: TObject);
+    procedure BtnPosteriorClick(Sender: TObject);
+    procedure BtnUltimoClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+    procedure ChangeEnter(Sender: TObject);
+    procedure ChangeExit(Sender: TObject);
+    procedure HabilitaControles;
+    procedure HabilitaControlesVisuais(Status: Boolean);
+
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.BtnNovoClick(Sender: TObject);
+ begin
+   DSPadrao.dataset.insert;
+ end;
+
+procedure TForm1.BtnGravarClick(Sender: TObject);
+ begin
+   DSPadrao.dataset.post;
+   DSPadrao.dataset.filtered := false;
+ end;
+
+procedure TForm1.BtnEditarClick(Sender: TObject);
+ begin
+   DSPadrao.dataset.edit;
+ end;
+
+procedure TForm1.BtnDeletarClick(Sender: TObject);
+ begin
+  if MessageDlg('Deseja Excluir o Registro', mtconfirmation, [mbYes, mbNo], 0)
+    = mrYes then
+  Begin
+   DSPadrao.dataset.delete;
+  End;
+ end;
+
+procedure TForm1.BtnCancelarClick(Sender: TObject);
+ begin
+  With DsPadrao.Dataset Do
+   Begin
+      Cancel;
+      Filtered := False;
+   End;
+ end;
+
+procedure TForm1.BtnPrimeiroClick(Sender: TObject);
+ begin
+   DSPadrao.dataset.first;
+ end;
+
+procedure TForm1.BtnAnteriorClick(Sender: TObject);
+ begin
+   DSPadrao.dataset.prior;
+ end;
+
+procedure TForm1.BtnPosteriorClick(Sender: TObject);
+ begin
+   DSPadrao.dataset.next;
+ end;
+
+procedure TForm1.BtnUltimoClick(Sender: TObject);
+ begin
+   DSPadrao.dataset.last;
+ end;
+
+procedure TForm1.ChangeEnter(Sender: TObject);
+ begin
+   if Sender is TDBEdit then
+    TDBEdit(Sender).Color := $00E6FED8
+   else if Sender is TDBLookupComboBox then
+    TDBLookupComboBox(Sender).Color := $00E6FED8
+   else if Sender is TDBComboBox then
+    TDBComboBox(Sender).Color := $00E6FED8
+   else if Sender is TDBMemo then
+    TDBMemo(Sender).Color := $00E6FED8;
+ end;
+
+procedure TForm1.ChangeExit(Sender: TObject);
+ begin
+  if Sender is TDBEdit then
+    TDBEdit(Sender).Color := clWindow
+  else if Sender is TDBLookupComboBox then
+    TDBLookupComboBox(Sender).Color := clWindow
+  else if Sender is TDBComboBox then
+    TDBComboBox(Sender).Color := clWindow
+  else if Sender is TDBMemo then
+    TDBMemo(Sender).Color := clWindow;
+ end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+ var
+  I: Integer;
+ begin
+
+ Try
+    DSPadrao.DataSet.Open;
+    HabilitaControles;
+    HabilitaControlesVisuais(False);
+  except
+    on e: Exception do
+    begin
+      ShowMessage('Erro ao conectar base de dados' +#13+
+                  'Erro : ' + E.Message +#13+
+                  'Classe : ' + E.ClassName);
+    end;
+End;
+
+  for I := 0 to ComponentCount - 1 do
+  begin
+    if Components[I] is TDBEdit then
+    begin
+      TDBEdit(Components[I]).OnEnter  := ChangeEnter;
+      TDBEdit(Components[I]).OnExit   := ChangeExit;
+    end
+    else
+    if Components[I] is TDBLookupComboBox then
+    begin
+      TDBLookupComboBox(Components[I]).OnEnter := ChangeEnter;
+      TDBLookupComboBox(Components[I]).OnExit  := ChangeExit;
+    end
+    else 
+    if Components[I] is TDBComboBox then
+    begin
+      TDBComboBox(Components[I]).OnEnter := ChangeEnter;
+      TDBComboBox(Components[I]).OnExit  := ChangeExit;
+    end
+    else
+    if Components[I] is TDBMemo then
+    begin
+      TDBMemo(Components[I]).OnEnter   := ChangeEnter;
+      TDBMemo(Components[I]).OnExit    := ChangeExit;
+    end
+  end;
+
+ end;
+
+procedure TForm1.HabilitaControles;
+ begin
+  BtnNovo.Enabled     := not(DSPadrao.DataSet.State in [dsInsert, dsEdit]);
+  BtnGravar.Enabled   := (DSPadrao.DataSet.State in [dsInsert, dsEdit]);
+  BtnEditar.Enabled   := (DSPadrao.DataSet.State in [dsBrowse]);
+  BtnDeletar.Enabled  := (DSPadrao.DataSet.State in [dsBrowse, dsEdit]);
+  BtnCancelar.Enabled := (DSPadrao.DataSet.State in [dsInsert, dsEdit]);
+  BtnPesquisa.Enabled := not (DSPadrao.DataSet.State in [dsInsert, dsEdit]);
+ end;
+
+procedure TForm1.HabilitaControlesVisuais(Status: Boolean);
+ var
+  I: Integer;
+ begin
+  for I := 0 to ComponentCount - 1 do
+  begin
+    if Components[I] is TDBEdit then
+      TDBEdit(Components[I]).Enabled := Status
+    else if Components[I] is TDBLookupComboBox then
+      TDBLookupComboBox(Components[I]).Enabled := Status
+    else if Components[I] is TDBComboBox then
+      TDBComboBox(Components[I]).Enabled := Status
+    else if Components[I] is TDBMemo then
+      TDBMemo(Components[I]).Enabled := Status;
+  end;
+ end;
+
+end.

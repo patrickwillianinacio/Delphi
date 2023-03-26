@@ -1,0 +1,69 @@
+<!doctype html>
+<html ng-app="ui.bootstrap.demo">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    <title>Bootstrap Shop Cart</title>
+ 
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet"      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script      src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+ 
+    <style>
+        body {
+            padding-top: 50px;
+        }
+        #divTotal{
+            background-color: white;
+        }
+        .affix{
+            right: 0px;
+        }
+        .affix-top{
+            right: 0px;
+            position: fixed;
+        }
+    </style>
+
+
+</head>
+ 
+<body>
+
+   <form [formGroup]="formCliente" (ngSubmit)="onSubmit()"
+
+  <div class="container">
+ 		
+     <div class="col-xs-7 col-md-8 col-sm-8 col-lg-8">
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Painel Pleno</h3>
+            </div>
+              <div class="panel-body">
+                <label for="Competencia">Competencia</label>
+                <select class="form-control" name="mes" id="mes" formControlName="mes">
+     <option value="1">:Competencia Agosto-2018 Mes 8 Ano 2018</option>
+      <option value="2">:Mês Fev 2019</option>
+      <option value="3">:Mês Mar 2019</option>
+      <option value="4">:Mês Abr 2019</option>
+      <option value="5">:Mês Mai 2019</option>
+      <option value="6">:Mês Jun 2019</option>
+      <option value="7">:Mês Jul 2019</option>
+      <option value="8">:Mês Ago 2019</option>
+      <option value="9">:Mês Set 2019</option>
+      <option value="10">:Mês Out 2019</option>
+      <option value="11">:Mês Nov 2019</option>
+      <option value="12">:Mês Dez 2019</option>                                     
+              </div>
+        </div>
+
+
+
+</form>
+  </body>
+</html>

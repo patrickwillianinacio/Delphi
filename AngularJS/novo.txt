@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Painel Pleno</h2>
+
+<p id="novo"></p>
+
+<script>
+var txt = '{"result":[{"Competencias":[{"Competencia":"Janeiro-2019","Mes":"1","Ano":"2019"},{"Competencia":"Fevereiro-2019","Mes":"2","Ano":"2019"},{"Competencia":"Mar\u00E7o-2019","Mes":"3","Ano":"2019"},{"Competencia":"Abril-2019","Mes":"4","Ano":"2019"},{"Competencia":"Maio-2019","Mes":"5","Ano":"2019"},{"Competencia":"Junho-2019","Mes":"6","Ano":"2019"},{"Competencia":"Julho-2019","Mes":"7","Ano":"2019"},{"Competencia":"Agosto-2019","Mes":"8","Ano":"2019"},{"Competencia":"Setembro-2019","Mes":"9","Ano":"2019"},{"Competencia":"Outubro-2019","Mes":"10","Ano":"2019"},{"Competencia":"Novembro-2019","Mes":"11","Ano":"2019"},{"Competencia":"Dezembro-2019","Mes":"12","Ano":"2019"}]}]}'
+var obj = JSON.parse(txt);
+</script>
+
+</body>
+</html>

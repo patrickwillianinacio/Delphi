@@ -1,0 +1,24 @@
+﻿</form>
+                <hr>
+                <h1>Lista de Clientes</h1>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Idade</th>
+                        <th>Mae</th>
+                        <th>Pai</th>
+                        <th>Cidade</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+<tbody>
+  <!-- Aqui serão exibidos os dados do usuários cadastrados -->
+      <tr ng-repeat="Pleno in Plenos">
+         <td>{{Pleno.Nome}}</td>
+         <td>{{Pleno.Idade}}</td>
+         <td>{{Pleno.Mae}}</td>
+         <td>{{Pleno.Pai}}</td>
+         <td>{{Pleno.Cidade}}</td>
+      </tr>
+</tbody>

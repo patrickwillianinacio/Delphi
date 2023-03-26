@@ -1,0 +1,91 @@
+unit FrmPergunta1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls, ComCtrls;
+
+type
+  TTFrmPergunta1 = class(TForm)
+    ImgFundo: TImage;
+    GroupBox1: TGroupBox;
+    lbltempo: TLabel;
+    ProgressBar1: TProgressBar;
+    GroupBox2: TGroupBox;
+    Label1: TLabel;
+    Label2: TLabel;
+    EdtAcertos: TEdit;
+    EdtErros: TEdit;
+    RdgResposta2: TRadioGroup;
+    BtnAvancar: TButton;
+    Tempo1: TTimer;
+    procedure FormShow(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure ProgressBar1Click(Sender: TObject);
+    procedure tempo1TimerTimer(Sender: TObject);
+    procedure FormClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  TFrmPergunta1: TTFrmPergunta1;
+
+implementation
+
+uses U_DTM, TFrmPergunta1, FormPergunta2;
+
+{$R *.dfm}
+
+procedure TTFrmPergunta1.FormShow(Sender: TObject);
+   begin
+      Dtm.contagem :=1; // Estamos inicializando a contagem dos segundos
+      tempo1.Enabled :=true; // Estamos habilitando o tempo para o usuário responder
+      dtm.hora := strtotime('00:00:00'); // Variável hora recebe o tempo zerado
+   end;
+
+procedure TTFrmPergunta1.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+   begin
+     Application.terminate; // Se o usuário fechar, o jogo é automaticamente encerrado
+   end;
+
+procedure TTFrmPergunta1.ProgressBar1Click(Sender: TObject);
+   begin
+      tempo1.Enabled :=false; // Se o usuário respondeu, a contagem é desfeita desabilitando o timer tempo1
+   if RdgResposta2.itemindex =1 then // Se o usuário clicou na resposta certa
+   begin
+   showmessage('Você Acertou!!!!!!'); // Uma mensagem de acerto é exibida
+   inc(dtm.acerto); // A variável global acerto no data module é incrementada
+   end else begin// Se o usuário errou
+    showmessage('Você Errou!!!!!!!'); // Uma mensagem de erro é exibida
+    inc(dtm.erro); // A variável global erro no data module é incrementada
+   end;
+     RdgResposta2.Enabled :=false; // As respostas são desabilitadas
+     edtacertos.text :=inttostr(dtm.acerto); // A quantidade de acertos é exibida
+     EdtErros.Text :=inttostr(dtm.erro); // A quantidade de erros é exibida
+     end;
+
+procedure TTFrmPergunta1.tempo1TimerTimer(Sender: TObject);
+   begin
+      ProgressBar1.position :=  ProgressBar1.position +3; // Vai adicionando barras no ProgressBar
+      dtm.hora := dtm.hora+strtotime('00:00:00'); // Vai incrementando 1 segundo no nosso cronometro
+      lbltempo.caption := timetostr(dtm.hora); // Mostra o conteúdo armazenado dentro da variável hora
+      if dtm.contagem = 30 then // Se já passaram os 30 segundos
+      begin
+         tempo1.Enabled :=false; // O timer volta a ser desabilitado
+         showmessage('Tempo Esgotado'); // Uma mensagem de tempo esgotado é exibida
+         Application.Terminate; // A aplicação é encerrada
+      end;
+         inc(dtm.contagem); // Os segundos são incrementados aqui desde que o tempo de 30 segundos não seja extrapolado
+   end;
+
+procedure TTFrmPergunta1.FormClick(Sender: TObject);
+   begin
+      FrmPergunta2.showmodal
+   end;
+
+end.

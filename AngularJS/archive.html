@@ -1,0 +1,66 @@
+<!doctype html>
+<html ng-app="ui.bootstrap.demo">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    <title>Bootstrap Shop Cart</title>
+ 
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet"      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script      src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+ 
+    <style>
+        body {
+            padding-top: 50px;
+        }
+        #divTotal{
+            background-color: white;
+        }
+        .affix{
+            right: 0px;
+        }
+        .affix-top{
+            right: 0px;
+            position: fixed;
+        }
+    </style>
+
+
+</head>
+
+
+<body>
+
+
+   <form [formGroup]="formCliente" (ngSubmit)="onSubmit()"
+
+  <div ng-controller="PainelPleno">
+    
+     <div class="col-xs-7 col-md-8 col-sm-8 col-lg-8">
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Painel Pleno</h3>
+            </div>
+              <div class="panel-body">
+                <label for="Competencia">Competencia</label>
+                <select class="form-control" name="mes" id="mes" formControlName="mes">
+      <option value="7">:{"result":[{"Competencias":[{"Competencia":"Julho-2018","Mes":"7","Ano":"2018"},</option>
+      <option value="8">:{"Competencia":"Agosto-2018","Mes":"8","Ano":"2018"},      <option value="9">:{"Competencia":"Setembro-2018","Mes":"9","Ano":"2018"},</option>
+      <option value="10">:{"Competencia":"Outubro-2018","Mes":"10","Ano":"2018"},</option>
+      <option value="11">:{"Competencia":"Novembro-2018","Mes":"11","Ano":"2018"},</option>
+      <option value="12">:{"Competencia":"Dezembro-2018","Mes":"12","Ano":"2018"},</option>
+      <option value="1">:{"Competencia":"Janeiro-2019","Mes":"1","Ano":"2019"},</option>
+      <option value="2">:{"Competencia":"Fevereiro-2019","Mes":"2","Ano":"2019"},</option>
+      <option value="3">:{"Competencia":"Mar\u00E7o-2019","Mes":"3","Ano":"2019"},</option>
+      <option value="4">:{"Competencia":"Abril-2019","Mes":"4","Ano":"2019"},</option>
+      <option value="5">:{"Competencia":"Maio-2019","Mes":"5","Ano":"2019"},</option>
+      <option value="6">:{"Competencia":"Junho-2019","Mes":"6","Ano":"2019"}</option>                          
+              </div>
+        </div>
+
+

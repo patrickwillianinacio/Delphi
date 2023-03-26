@@ -1,0 +1,83 @@
+unit uPrincipal;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Buttons, ExtCtrls;
+
+type
+  TfrmPrincipal = class(TForm)
+    btnOk : TBitBtn;
+    btnCancelar: TBitBtn;
+    Panel1 : TPanel;
+    Panel2 : TPanel;
+    RadioGroup1 : TRadioGroup;
+    edtAtendimento : TEdit;
+    procedure btnOkClick(Sender : TObject);
+    procedure btnCancelarClick(Sender : TObject);
+    procedure FormActivate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal : TfrmPrincipal;
+  bolLogin: Boolean = false;
+
+implementation
+
+uses uExcel, uLogin;
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.btnOkClick(Sender : TObject);
+var xExcel : TfrmGeracaoExcel;
+begin
+   try
+      btnOk.Enabled := false;
+
+      if (Trim(edtAtendimento.Text) <> '') and not(StrToIntDef(edtAtendimento.Text, 0) = 0) then begin
+         xExcel := TfrmGeracaoExcel.create(Self);
+         xExcel.ClientDataSetExcel.Active := False;
+         xExcel.SQLQueryExcel.ParamByName('CODIGOATENDIMENTO').AsInteger := StrtoInt(edtAtendimento.Text);
+         xExcel.ClientDataSetExcel.Active := True;
+
+         if not(xExcel.DBGridExcel.DataSource.DataSet.Eof) then begin
+            xExcel.ExportaExcel;
+            frmGeracaoExcel.Close;
+         end else begin
+            SHowMessage('Atendimento não existe ou não há itens na conta');
+         end;
+
+      end else begin
+         SHowMessage('Digite um Atendimento válido');
+      end;
+      btnOk.Enabled := true;
+   except
+      btnOk.Enabled := true;
+   end;
+
+end;
+
+procedure TfrmPrincipal.btnCancelarClick(Sender : TObject);
+begin
+   Close;
+end;
+
+
+procedure TfrmPrincipal.FormActivate(Sender: TObject);
+begin
+if ((bolLogin = false) and (frmLogin = nil)) then begin
+//Criando o formulário de Login
+   Application.CreateForm(TfrmLogin, frmLogin);
+   bolLogin := true;
+   frmPrincipal.showmodal; //Exibindo o formulário de Login
+  end;
+//Colocando a aplicação no topo das aplicações
+   SetForegroundWindow(Handle);
+end;
+
+end.

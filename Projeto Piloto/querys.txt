@@ -1,0 +1,41 @@
+
+procedure TfrmCadMaterial.OrdemFiltro;
+  var
+   strSQL: string;
+  begin
+   qryMaterial.Close;
+    if (btnFiltro.Caption = 'Desabilitar') then begin
+      if (rbCodigoFiltro.Checked) Then
+         strSQL := 'select * from MATERIAL where codigomaterial >= ' +
+         QuotedStr(edtDe.Text) + ' and codigomaterial <= ' + QuotedStr(edtAte.Text);
+         if (rbDescricaoFiltro.Checked) Then
+            strSQL := 'select * from MATERIAL where upper(NOME) >= ' +
+            QuotedStr(UpperCase(edtDe.Text)) + ' and upper(NOME) <= ' +
+            QuotedStr(UpperCase(edtAte.Text));
+         end else
+               strSQL := 'select * from MATERIAL';
+      if (rgOrdem.ItemIndex = 0) then
+            strSQL := strSQL + ' order by codigomaterial'
+      else
+         strSQL := strSQL + ' order by NOME';
+         qryMaterial.SQL.Text := strSQL;
+         qryMaterial.Open;
+  end;
+
+
+---------------------------------------------------------------------------------------------------
+
+if (rbCodigoFiltro.Checked) Then
+         strSQL := 'select * from GRUPO where CODIGOGRUPO >= ' +
+         QuotedStr(edtDe.Text) + ' and CODIGOGRUPO <= ' +
+         QuotedStr(edtAte.Text);
+        if (rbDescricaoFiltro.Checked) Then
+            strSQL := 'select * from GRUPO where upper(MEDICAMENTO) >= ' +QuotedStr(UpperCase(edtDe.Text)) +' and upper(MEDICAMENTO) <= ' +QuotedStr(UpperCase(edtAte.Text));
+        end else
+            strSQL := 'select * from GRUPO';
+              if (rgOrdem.ItemIndex = 0) then
+                  strSQL := strSQL + ' order by CODIGOGRUPO'
+              else
+               strSQL := strSQL + ' order by MEDICAMENTO';
+               qryGrupo.SQL.Text := strSQL;
+               qryGrupo.Open;

@@ -1,0 +1,76 @@
+<script>
+function PainelPleno($scope) {
+  
+  $scope.data = {"status":"ok","count":12,"count_total":54,"pages":6,"posts":[{"id":2625,"type":"post","return":"Competencia Julho-2018 Mes 7 Ano 2018","categories":[{"id":185,"return":"noticia-2","title":"Not\u00edcia","description":"","parent":0,"post_count":27}]},
+
+{"id":2626,"type":"post","return":"Competencia Agosto-2018 Mes 8 Ano 2018","categories":[{"id":185,"return":"noticia-2","title":"Not\u00edcia","description":"","parent":0,"post_count":27}]},
+
+
+{"id":2626,"type":"post","return":"Competencia Setembro-2018 Mes 9 Ano 2018","categories":[{"id":185,"slug":"noticia-2","title":"Not\u00edcia","description":"","parent":0,"post_count":27}]},
+
+
+
+{"id":2626,"type":"post","return":"Competencia Outubro-2018 Mes 10 Ano 2018","categories":[{"id":185,"return":"noticia-2","title":"Not\u00edcia","description":"","parent":0,"post_count":27}]},
+
+
+
+{"id":2626,"type":"post","return":"Competencia Novembro-2018 Mes 11 Ano 2018","categories":[{"id":185,"return":"noticia-2","title":"Not\u00edcia","description":"","parent":0,"post_count":27}]},
+
+
+
+{"id":2626,"type":"post","return":"Competencia Dezembro-2018 Mes 12 Ano 2018","categories":[{"id":185,"return":"noticia-2","title":"Not\u00edcia","description":"","parent":0,"post_count":27}]},
+
+
+
+{"id":2626,"type":"post","return":"Competencia Janeiro-2019 Mes 1 Ano 2018","categories":[{"id":185,"return":"noticia-2","title":"Not\u00edcia","description":"","parent":0,"post_count":27}]},
+
+
+
+{"id":2626,"type":"post","return":"Competencia Fevereiro-2019 Mes 2 Ano 2018","categories":[{"id":185,"return":"noticia-2","title":"Not\u00edcia","description":"","parent":0,"post_count":27}]},
+
+
+
+{"id":2626,"type":"post","return":"Competencia Mar\u00E7o-2019 Mes 3 Ano 2018","categories":[{"id":185,"return":"noticia-2","title":"Not\u00edcia","description":"","parent":0,"post_count":27}]},
+
+
+
+{"id":2626,"type":"post","return":"Competencia Abril-2019 Mes 4 Ano 2018","categories":[{"id":185,"return":"noticia-2","title":"Not\u00edcia","description":"","parent":0,"post_count":27}]},
+
+
+
+{"type":"post","return":"Competencia Maio-2018 Mes 5 Ano 2019","categories":[{"id":185,"return":"noticia-2","title":"Not\u00edcia","description":"","parent":0,"post_count":27}]},
+
+
+
+
+{"type":"post","return":"Competencia Junho-2018 Mes 6 Ano 2019","categories":[{"id":185,"return":"noticia-2","title":"Not\u00edcia","description":"","parent":0,"post_count":27}]}],
+
+
+
+
+
+"query":{"ignore_sticky_posts":true,"posts":""}};
+}
+
+</script>
+
+
+</script>
+
+<html ng-app>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+  </head>
+  <body>
+    <div ng-controller="PainelPleno">
+
+      <table>
+        <tr ng-repeat='i in data.posts'>
+          <td>{{i.return}}</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
+
+</script>

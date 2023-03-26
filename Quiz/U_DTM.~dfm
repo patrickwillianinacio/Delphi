@@ -1,0 +1,8 @@
+object DTM: TDTM
+  OldCreateOrder = False
+  OnCreate = DataModuleCreate
+  Left = 455
+  Top = 248
+  Height = 150
+  Width = 215
+end

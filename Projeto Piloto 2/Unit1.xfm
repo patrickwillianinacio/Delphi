@@ -1,0 +1,137 @@
+object WebModule1: TWebModule1
+  OldCreateOrder = False
+  Actions = <
+    item
+      Name = 'CODIGO'
+    end
+    item
+      Name = 'NOME'
+    end>
+  Left = 227
+  Top = 116
+  Height = 273
+  Width = 265
+  object SQLConnection1: TSQLConnection
+    ConnectionName = 'IBLocal'
+    DriverName = 'Interbase'
+    GetDriverFunc = 'getSQLDriverINTERBASE'
+    LibraryName = 'dbexpint.dll'
+    LoginPrompt = False
+    Params.Strings = (
+      'BlobSize=-1'
+      'CommitRetain=False'
+      'Database=192.168.1.26:backup/softalbak03012019.fdb'
+      'DriverName=Interbase'
+      'ErrorResourceFile='
+      'LocaleCode=0000'
+      'Password=bjj*34jb'
+      'RoleName=RoleName'
+      'ServerCharSet='
+      'SQLDialect=3'
+      'Interbase TransIsolation=ReadCommited'
+      'User_Name=sysdba'
+      'WaitOnLocks=True')
+    VendorLib = 'GDS32.DLL'
+    Connected = True
+    Left = 32
+    Top = 16
+  end
+  object tbMaterial: TSQLDataSet
+    CommandText = 'SELECT *FROM MATERIAL'
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = SQLConnection1
+    Left = 112
+    Top = 16
+  end
+  object SQLGeral: TSQLQuery
+    MaxBlobSize = -1
+    Params = <
+      item
+        DataType = ftInteger
+        Name = 'CODIGO'
+        ParamType = ptUnknown
+        Value = 0
+      end>
+    SQL.Strings = (
+      'SELECT *FROM MATERIAL WHERE CODIGOMATERIAL= :CODIGO')
+    SQLConnection = SQLConnection1
+    Left = 176
+    Top = 16
+  end
+  object SQLInclui: TSQLQuery
+    MaxBlobSize = -1
+    Params = <
+      item
+        DataType = ftString
+        Name = 'NOME'
+        ParamType = ptUnknown
+        Value = ''
+      end
+      item
+        DataType = ftString
+        Name = 'CODIGOGRUPO'
+        ParamType = ptUnknown
+        Value = ''
+      end>
+    SQL.Strings = (
+      'INSERT INTO GRUPO VALUES(0,:NOME, :CODIGOGRUPO)')
+    SQLConnection = SQLConnection1
+    Left = 24
+    Top = 80
+  end
+  object SQLAltera: TSQLQuery
+    MaxBlobSize = -1
+    Params = <
+      item
+        DataType = ftString
+        Name = 'PNOME'
+        ParamType = ptUnknown
+        Value = ''
+      end
+      item
+        DataType = ftString
+        Name = 'PGRUPO'
+        ParamType = ptUnknown
+        Value = ''
+      end>
+    SQL.Strings = (
+      'UPDATE TBGRUPO SET  NOME=:PNOME '
+      'WHERE CODIGOGRUPO=:PGRUPO')
+    SQLConnection = SQLConnection1
+    Left = 88
+    Top = 80
+  end
+  object SQLExclui: TSQLQuery
+    Params = <
+      item
+        DataType = ftInteger
+        Name = 'PCODIGO'
+        ParamType = ptUnknown
+        Value = 0
+      end>
+    SQL.Strings = (
+      'DELETE FROM TBCLIENTE WHERE CODIGOGRUPO=:PCODIGO')
+    Left = 160
+    Top = 80
+  end
+  object PPClientes: TDataSetTableProducer
+    Columns = <
+      item
+        FieldName = 'NOME'
+      end
+      item
+        FieldName = 'CODIGOGRUPO'
+      end
+      item
+        Title.Caption = 'ALTERA'
+      end
+      item
+        Title.Caption = 'EXCLUI'
+      end>
+    DataSet = tbMaterial
+    OnFormatCell = PPClientesFormatCell
+    Left = 24
+    Top = 136
+  end
+end

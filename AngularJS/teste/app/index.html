@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html ng-app="Pleno">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Indicadores Pleno</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/painel.controller.js"></script>
+    <script src="scripts/painel.directive.js"></script>
+
+</head>
+<body>
+    <div class="container" ng-controller="PainelController">
+        <h1> Painel Pleno </h1>
+
+        <div class="Meu-Painel">
+            <div aw-Pleno="f" fn-fechar="removerPleno(f.id)" ng-repeat="f in Pleno"></div>
+        </div>
+
+
+
+<form [formGroup]="formCliente" (ngSubmit)="onSubmit()">
+
+  <div class="container">
+        
+     <div class="col-xs-7 col-md-8 col-sm-8 col-lg-8">
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Indicadores Pleno</h3>
+            </div>
+              <div class="panel-body">
+                <label for="Competencia">Competencia</label>
+                <select class="form-control" name="mes" id="mes" formControlName="mes">
+                    <option value="7">:Mes Julho 2018</option>
+                    <option value="8">:Mes Agosto 2018</option>
+                    <option value="9">:Mes Setembro 2018</option>
+                    <option value="10">:Mes Outubro 2018</option>
+                    <option value="11">:Mes Novembro 2018</option>
+                    <option value="12">:Mes Dezembro 2018</option>
+                    <option value="1">:Mes Janeiro 2019</option>
+                    <option value="2">:Mes Fevereiro 2019</option>
+                    <option value="3">:Mes Março 2019</option>
+                    <option value="4">:Mes Abril 2019</option>
+                    <option value="5">:Mes Maio 2019</option>
+                    <option value="6">:Mes Junho 2019</option> 
+                </select>                                   
+              </div>
+        </div>
+    </form>
+
+
+<hr>
+
+<div class="form-campo">
+        <form name="formulario" class="form-Pleno" ng-submit="criarPleno()">
+            <h1>Adicionar Cliente</h1>
+            <div class="form-campo">
+                <label for="Nome">Nome</label>
+                <input type="text" id="Nome" name="Nome" ng-model="novoPleno.Nome">
+            </div>
+            <div class="form-campo pequeno">
+                <label for="Idade">Idade</label>
+                <input type="number" id="Idade" name="Idade" ng-model="novoPleno.Idade">
+            </div>
+            <div class="form-campo">
+                <label for="Mae">Mae</label>
+                <input type="text" id="Mae" name="Mae" ng-model="novoPleno.Mae">
+            </div>
+            <div class="form-campo">
+                <label for="Pai">Pai</label>
+                <input type="text" id="Pai" name="Pai" ng-model="novoPleno.Pai">
+            </div>
+            <div class="form-campo medio">
+                <label for="Cidade">Cidade</label>
+                <input type="text" id="Cidade" name="Cidade" ng-model="novoPleno.Cidade">
+            </div>
+
+            <footer>
+                <button type="reset">Limpar</button>
+                <button type="submit">Salvar</button>
+            </footer>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>

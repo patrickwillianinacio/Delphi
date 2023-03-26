@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR" ng-app>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/sandstone/bootstrap.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <head>	
+	<h1>Indicadores Pleno</h1>
+  </head>
+
+
+<div class="container" ng-app="ClienteApp" ng-controller="ClienteController">
+  <div class="form-group">
+    <div class="input-group">
+      <label for="Competencia">Competencia</label>
+        <input type="date" class="form-control" name="Competencia" id="Competencia" formControlName="Competencia">
+  </div>
+
+    <div class="input-group">
+      <label>mes:</label>
+      <input type="text" class="form-control" ng-model="mes">
+      <a href="#" class="btn btn-sucess btn-sm" ng-click="consultar();">Buscar</a>
+    </div>
+  </div>
+
+
+
+<body>
+
+   <form [formGroup]="formCliente" (ngSubmit)="onSubmit()"
+
+  <div class="container">
+ 		
+     <div class="col-xs-7 col-md-8 col-sm-8 col-lg-8">
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Painel Pleno</h3>
+            </div>
+              <div class="panel-body">
+                <label for="Competencia">Competencia</label>
+                <select class="form-control" name="mes" id="mes" formControlName="mes">
+     <option value="1">:Mês Jan 2019</option>
+      <option value="2">:Mês Fev 2019</option>
+      <option value="3">:Mês Mar 2019</option>
+      <option value="4">:Mês Abr 2019</option>
+      <option value="5">:Mês Mai 2019</option>
+      <option value="6">:Mês Jun 2019</option>
+      <option value="7">:Mês Jul 2019</option>
+      <option value="8">:Mês Ago 2019</option>
+      <option value="9">:Mês Set 2019</option>
+      <option value="10">:Mês Out 2019</option>
+      <option value="11">:Mês Nov 2019</option>
+      <option value="12">:Mês Dez 2019</option>                                     
+              </div>
+        </div>
+
+
+
+</form>
+  </body>
+
+
+
+  
+  <table class="table table-bordered table-striped">
+   
+  </table>
+
+</div>
+
+</html>

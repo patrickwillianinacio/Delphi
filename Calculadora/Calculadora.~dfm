@@ -1,0 +1,303 @@
+object Form1: TForm1
+  Left = 240
+  Top = 128
+  Width = 691
+  Height = 560
+  Caption = 'Form1'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  KeyPreview = True
+  OldCreateOrder = False
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object um: TButton
+    Left = 56
+    Top = 80
+    Width = 97
+    Height = 89
+    Caption = '1'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    OnClick = umClick
+  end
+  object dois: TButton
+    Left = 169
+    Top = 80
+    Width = 97
+    Height = 89
+    Caption = '2'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    OnClick = doisClick
+  end
+  object tres: TButton
+    Left = 281
+    Top = 80
+    Width = 97
+    Height = 89
+    Caption = '3'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+    OnClick = tresClick
+  end
+  object quatro: TButton
+    Left = 57
+    Top = 186
+    Width = 97
+    Height = 89
+    Caption = '4'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 3
+    OnClick = quatroClick
+  end
+  object cinco: TButton
+    Left = 169
+    Top = 186
+    Width = 97
+    Height = 89
+    Caption = '5'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 4
+    OnClick = cincoClick
+  end
+  object seis: TButton
+    Left = 281
+    Top = 186
+    Width = 97
+    Height = 89
+    Caption = '6'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 5
+    OnClick = seisClick
+  end
+  object sete: TButton
+    Left = 57
+    Top = 290
+    Width = 97
+    Height = 89
+    Caption = '7'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 6
+    OnClick = seteClick
+  end
+  object oito: TButton
+    Left = 169
+    Top = 290
+    Width = 97
+    Height = 89
+    Caption = '8'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 7
+    OnClick = oitoClick
+  end
+  object nove: TButton
+    Left = 282
+    Top = 290
+    Width = 97
+    Height = 89
+    Caption = '9'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 8
+    OnClick = noveClick
+  end
+  object limpar: TButton
+    Left = 58
+    Top = 393
+    Width = 97
+    Height = 89
+    Caption = 'c'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 9
+    OnClick = limparClick
+  end
+  object zero: TButton
+    Left = 169
+    Top = 394
+    Width = 208
+    Height = 89
+    Caption = '0'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 10
+    OnClick = zeroClick
+  end
+  object maismenos: TButton
+    Left = 521
+    Top = 79
+    Width = 97
+    Height = 89
+    Caption = '+-'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 11
+    OnClick = maismenosClick
+  end
+  object igual: TButton
+    Left = 521
+    Top = 289
+    Width = 97
+    Height = 192
+    Caption = '='
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 12
+    OnClick = igualClick
+  end
+  object virgula: TButton
+    Left = 521
+    Top = 185
+    Width = 97
+    Height = 89
+    Caption = ','
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 13
+    OnClick = virgulaClick
+  end
+  object visor: TEdit
+    Left = 56
+    Top = 16
+    Width = 561
+    Height = 32
+    Enabled = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 14
+  end
+  object mais: TButton
+    Left = 404
+    Top = 80
+    Width = 97
+    Height = 89
+    Caption = '+'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 15
+    OnClick = maisClick
+  end
+  object menos: TButton
+    Left = 405
+    Top = 186
+    Width = 97
+    Height = 89
+    Caption = '-'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 16
+    OnClick = menosClick
+  end
+  object dividir: TButton
+    Left = 405
+    Top = 290
+    Width = 97
+    Height = 89
+    Caption = '/'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 17
+    OnClick = dividirClick
+  end
+  object multiplicar: TButton
+    Left = 406
+    Top = 393
+    Width = 97
+    Height = 89
+    Caption = '*'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 18
+    OnClick = multiplicarClick
+  end
+end

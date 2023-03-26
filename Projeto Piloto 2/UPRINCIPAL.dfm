@@ -1,0 +1,225 @@
+object DTM: TDTM
+  OldCreateOrder = False
+  Left = 364
+  Top = 168
+  Height = 265
+  Width = 451
+  object IBDataMaterial: TIBDatabase
+    Connected = True
+    DatabaseName = '192.168.1.26:backup/softalbak03012019.fdb'
+    Params.Strings = (
+      'User_Name=sysdba'
+      'Password=bjj*34jb')
+    LoginPrompt = False
+    DefaultTransaction = IBTransMaterial
+    Left = 24
+    Top = 16
+  end
+  object IBTransMaterial: TIBTransaction
+    Active = True
+    DefaultDatabase = IBDataMaterial
+    Params.Strings = (
+      'read_committed'
+      'rec_version'
+      'nowait')
+    Left = 112
+    Top = 16
+  end
+  object QryMaterial: TIBQuery
+    Database = IBDataMaterial
+    Transaction = IBTransMaterial
+    BufferChunks = 1000
+    CachedUpdates = False
+    SQL.Strings = (
+      'SELECT CODIGOMATERIAL, CUSTOMEDIO, NOME, PRECOCUSTO'
+      'FROM MATERIAL')
+    UpdateObject = UpMaterial
+    Left = 80
+    Top = 80
+    object QryMaterialCODIGOMATERIAL: TIntegerField
+      FieldName = 'CODIGOMATERIAL'
+      Origin = '"MATERIAL"."CODIGOMATERIAL"'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryMaterialCUSTOMEDIO: TIBBCDField
+      FieldName = 'CUSTOMEDIO'
+      Origin = '"MATERIAL"."CUSTOMEDIO"'
+      Precision = 18
+      Size = 2
+    end
+    object QryMaterialNOME: TIBStringField
+      FieldName = 'NOME'
+      Origin = '"MATERIAL"."NOME"'
+      Size = 60
+    end
+    object QryMaterialPRECOCUSTO: TIBBCDField
+      FieldName = 'PRECOCUSTO'
+      Origin = '"MATERIAL"."PRECOCUSTO"'
+      Precision = 18
+      Size = 4
+    end
+  end
+  object UpMaterial: TIBUpdateSQL
+    RefreshSQL.Strings = (
+      'Select '
+      '  CODIGOMATERIAL,'
+      '  NOME,'
+      '  CODIGOGRUPO,'
+      '  SUBGRUPO,'
+      '  CLASSE,'
+      '  CODIGOBARRAS,'
+      '  PESO,'
+      '  CODIGOFABRICANTE,'
+      '  CADASTROEM,'
+      '  CODIGOORIGINAL,'
+      '  OBSERVACAO,'
+      '  CODIGOPRINCIPIOATIVO,'
+      '  PADRAO,'
+      '  USORESTRITO,'
+      '  PRECOBRASINDICE,'
+      '  PRECOCUSTO,'
+      '  CUSTOMEDIO,'
+      '  ABCFARMA,'
+      '  CODIGOBRASINDICE,'
+      '  APRESENTACAOBRASINDICE,'
+      '  LABORATORIOBRASINDICE,'
+      '  ULTIMAATUALIZACAOBRASINDICE,'
+      '  KIT,'
+      '  CODIGOHSIST,'
+      '  PROTESE,'
+      '  LECODIGOBARRA,'
+      '  CONSIGNADO,'
+      '  CODIGOMATERIALPRINCIPAL,'
+      '  CODIGOULTIMOFORNECEDOR,'
+      '  DATAULTIMACOMPRA,'
+      '  LELOTEDATAVALIDADE,'
+      '  DATAEXCLUSAO,'
+      '  UTILIZAPRECOCUSTO,'
+      '  PREREQUISICAO,'
+      '  INCLUSONATAXA,'
+      '  RELACIONADOBRASINDICE,'
+      '  HORACADASTRO,'
+      '  CADASTRADOR,'
+      '  ALTERADOR,'
+      '  DATAALTERACAO,'
+      '  HORAALTERACAO,'
+      '  CODIGOPTU,'
+      '  DIGITOPTU,'
+      '  PADRAOPA,'
+      '  PRECOPTU,'
+      '  NOMECOMPLETO,'
+      '  PTUVELHO,'
+      '  TIPOMATERIAL,'
+      '  BLOQUEADO,'
+      '  REGISTROANIVSA,'
+      '  MEDICAMENTOPERIGOSO,'
+      '  CODIGOSIMPRO,'
+      '  REQUERAUTORIZACAOORIGEM'
+      'from MATERIAL '
+      'where'
+      '  CODIGOMATERIAL = :CODIGOMATERIAL')
+    ModifySQL.Strings = (
+      'update MATERIAL'
+      'set'
+      '  CODIGOMATERIAL = :CODIGOMATERIAL,'
+      '  CUSTOMEDIO = :CUSTOMEDIO,'
+      '  NOME = :NOME,'
+      '  PRECOCUSTO = :PRECOCUSTO'
+      'where'
+      '  CODIGOMATERIAL = :OLD_CODIGOMATERIAL')
+    InsertSQL.Strings = (
+      'insert into MATERIAL'
+      '  (CODIGOMATERIAL, CUSTOMEDIO, NOME, PRECOCUSTO)'
+      'values'
+      '  (:CODIGOMATERIAL, :CUSTOMEDIO, :NOME, :PRECOCUSTO)')
+    DeleteSQL.Strings = (
+      'delete from MATERIAL'
+      'where'
+      '  CODIGOMATERIAL = :OLD_CODIGOMATERIAL')
+    Left = 152
+    Top = 80
+  end
+  object DSMaterial: TDataSource
+    AutoEdit = False
+    DataSet = QryMaterial
+    Left = 24
+    Top = 80
+  end
+  object QryGrupo: TIBQuery
+    Database = IBDataMaterial
+    Transaction = IBTransMaterial
+    BufferChunks = 1000
+    CachedUpdates = False
+    SQL.Strings = (
+      'SELECT CODIGOGRUPO, MATERIAL, MEDICAMENTO, NOME'
+      'FROM GRUPO')
+    UpdateObject = UpGrupo
+    Left = 80
+    Top = 160
+    object QryGrupoCODIGOGRUPO: TIntegerField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'CODIGOGRUPO'
+      Origin = '"GRUPO"."CODIGOGRUPO"'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryGrupoMATERIAL: TIBStringField
+      FieldName = 'MATERIAL'
+      Origin = '"GRUPO"."MATERIAL"'
+      FixedChar = True
+      Size = 1
+    end
+    object QryGrupoMEDICAMENTO: TIBStringField
+      FieldName = 'MEDICAMENTO'
+      Origin = '"GRUPO"."MEDICAMENTO"'
+      FixedChar = True
+      Size = 1
+    end
+    object QryGrupoNOME: TIBStringField
+      FieldName = 'NOME'
+      Origin = '"GRUPO"."NOME"'
+      Size = 45
+    end
+  end
+  object UpGrupo: TIBUpdateSQL
+    RefreshSQL.Strings = (
+      'Select '
+      '  CODIGOGRUPO,'
+      '  CONTROLAESTOQUE,'
+      '  NOME,'
+      '  MEDICAMENTO,'
+      '  MATERIAL,'
+      '  PTUOBRIGATORIO,'
+      '  CODIGOGRUPOBIONEXO'
+      'from GRUPO '
+      'where'
+      '  CODIGOGRUPO = :CODIGOGRUPO')
+    ModifySQL.Strings = (
+      'update GRUPO'
+      'set'
+      '  CODIGOGRUPO = :CODIGOGRUPO,'
+      '  MATERIAL = :MATERIAL,'
+      '  MEDICAMENTO = :MEDICAMENTO,'
+      '  NOME = :NOME'
+      'where'
+      '  CODIGOGRUPO = :OLD_CODIGOGRUPO')
+    InsertSQL.Strings = (
+      'insert into GRUPO'
+      '  (CODIGOGRUPO, MATERIAL, MEDICAMENTO, NOME)'
+      'values'
+      '  (:CODIGOGRUPO, :MATERIAL, :MEDICAMENTO, :NOME)')
+    DeleteSQL.Strings = (
+      'delete from GRUPO'
+      'where'
+      '  CODIGOGRUPO = :OLD_CODIGOGRUPO')
+    Left = 144
+    Top = 160
+  end
+  object DSGrupo: TDataSource
+    AutoEdit = False
+    DataSet = QryGrupo
+    Left = 24
+    Top = 160
+  end
+end

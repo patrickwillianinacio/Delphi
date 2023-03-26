@@ -1,0 +1,195 @@
+object frmGeracaoExcel: TfrmGeracaoExcel
+  Left = 309
+  Top = 129
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Geracao Excel'
+  ClientHeight = 637
+  ClientWidth = 1289
+  Color = clInactiveCaption
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  KeyPreview = True
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object DBGridExcel: TDBGrid
+    Left = 64
+    Top = 88
+    Width = 1145
+    Height = 465
+    DataSource = DataSourceExcel
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'MS Sans Serif'
+    TitleFont.Style = []
+  end
+  object DataSourceExcel: TDataSource
+    AutoEdit = False
+    DataSet = ClientDataSetExcel
+    Left = 288
+    Top = 32
+  end
+  object SQLQueryExcel: TSQLQuery
+    DataSource = DataSourceExcel
+    MaxBlobSize = -1
+    Params = <
+      item
+        DataType = ftInteger
+        Name = 'CODIGOATENDIMENTO'
+        ParamType = ptInput
+        Value = 0
+      end>
+    SQL.Strings = (
+      'SELECT coalesce(TMP.NomePosto,'#39#39') as NomePosto,'
+      'TMP.MaterialConta,'
+      'TMP.NomeMaterialConta,'
+      'TMP.MaterialSaida,'
+      'TMP.NomeMaterialSaida,'
+      ''
+      ''
+      ''
+      
+        'SUM(PrecoMaterialConta) as SOMACONTA, SUM(PrecoMaterialSaida) AS' +
+        ' SOMASAIDA'
+      ''
+      ''
+      'FROM ('
+      'select'
+      'mtConta.CODIGOMATERIAL as MaterialConta,'
+      'COALESCE(mtConta.NOMECOMPLETO,'
+      ''
+      '(SELECT T.DESCRICAO'
+      '   FROM TIPOTABELAVALORESMATMED TTVMM'
+      
+        '   INNER JOIN TABELAVALORESMATMED  T ON T.CODIGOCOMPLETO = CM.CO' +
+        'DIGONOCONVENIO'
+      
+        '                                          AND T.INICIOVIGENCIA <' +
+        '= CM.DATA'
+      
+        '                                          AND T.FIMVIGENCIA > CM' +
+        '.DATA'
+      
+        '                                          AND TTVMM.CODIGOTIPO =' +
+        ' T.TIPOTABELAVALORES'
+      
+        '  WHERE TTVMM.CODIGOTIPOTABELAMATMEDCONVENIO = CM.CODIGOTIPOTABE' +
+        'LAMATMEDCONVENIO)) AS NomeMaterialConta,'
+      ''
+      'coalesce(mtReal.CODIGOMATERIAL,'#39#39') as MaterialSaida,'
+      'coalesce(mtReal.NOMECOMPLETO,'#39#39') as NomeMaterialSaida,'
+      ''
+      's.DESCRICAO as NomePosto,'
+      ''
+      
+        '(coalesce(cm.QTDE, 0) * coalesce(cm.VALOR, 0)) as PrecoMaterialC' +
+        'onta,'
+      
+        '(coalesce(m.QTDESAIDA, 0) * coalesce(e.PRECOCUSTO, 0)) as PrecoM' +
+        'aterialSaida'
+      ''
+      'from contapaciente cp'
+      'inner join corpomedicamento cm on cp.PAICONTA = cm.PAICONTA'
+      
+        'left outer join movimento m on cm.PAINOTA = m.PAINOTA and cm.ITE' +
+        'MCORPONOTASAIDA = m.ITEM'
+      
+        'left outer join material mtConta on cm.CODIGOMATERIAL = mtConta.' +
+        'CODIGOMATERIAL'
+      
+        'left outer join material mtReal on m.CODIGOMATERIAL   = mtReal.C' +
+        'ODIGOMATERIAL'
+      
+        'left outer join estoque e on m.CODIGOMATERIAL = e.CODIGOMATERIAL' +
+        ' and e.CODIGOSETOR = m.CODIGOSETOR'
+      
+        'left outer join setor s on m.CODIGOSETORHOSPITALAR = s.CODIGOSET' +
+        'OR'
+      ''
+      'where cp.codigoatendimento = :CODIGOATENDIMENTO'
+      ''
+      'and cm.EXCLUIDO is null) AS TMP'
+      ''
+      'group by'
+      'TMP.MaterialConta,'
+      'TMP.NomeMaterialConta,'
+      ''
+      'TMP.MaterialSaida,'
+      'TMP.NomeMaterialSaida,'
+      ''
+      'TMP.NomePosto'
+      ''
+      'order by TMP.NomePosto')
+    SQLConnection = SQLConnectionExcel
+    Left = 152
+    Top = 32
+  end
+  object DataSetProviderExcel: TDataSetProvider
+    DataSet = SQLQueryExcel
+    Left = 200
+    Top = 32
+  end
+  object ClientDataSetExcel: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'DataSetProviderExcel'
+    Left = 248
+    Top = 32
+  end
+  object SQLConnectionExcel: TSQLConnection
+    DriverName = 'Interbase'
+    GetDriverFunc = 'getSQLDriverINTERBASE'
+    LibraryName = 'dbexpint.dll'
+    LoginPrompt = False
+    Params.Strings = (
+      'BlobSize=-1'
+      'CommitRetain=False'
+      'Database=192.168.1.26:/dados/fdb/softal/softal.fdb'
+      'ErrorResourceFile='
+      'LocaleCode=0000'
+      'Password=bjj*34jb'
+      'RoleName=RoleName'
+      'ServerCharSet='
+      'SQLDialect=3'
+      'Interbase TransIsolation=ReadCommited'
+      'User_Name=sysdba'
+      'WaitOnLocks=True'
+      'Trim Char=False')
+    VendorLib = 'GDS32.DLL'
+    Connected = True
+    Left = 112
+    Top = 32
+  end
+  object qryLogin: TSQLQuery
+    DataSource = DataSourceLogin
+    MaxBlobSize = -1
+    Params = <
+      item
+        DataType = ftString
+        Name = 'NUSUARIO'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'NSENHA'
+        ParamType = ptInput
+      end>
+    SQL.Strings = (
+      'select NUSUARIO,NSENHA   from colaboradores where NUSUARIO ='
+      ':NUSUARIO and NSENHA = :NSENHA')
+    SQLConnection = SQLConnectionExcel
+    Left = 328
+    Top = 32
+  end
+  object DataSourceLogin: TDataSource
+    Left = 368
+    Top = 32
+  end
+end

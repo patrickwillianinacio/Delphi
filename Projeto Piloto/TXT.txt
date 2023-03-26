@@ -1,0 +1,15 @@
+DriverName=Interbase
+BlobSize=-1
+CommitRetain=False
+Database= 192.168.1.26:backup/softalbak04042019.fdb
+ErrorResourceFile=
+LocaleCode=0000
+RoleName=RoleName
+ServerCharSet=ISO8859_1
+SQLDialect=3
+Interbase TransIsolation=ReadCommited
+User_Name= sysdba
+Password= bjj*34jb
+WaitOnLocks=True
+Trim Char=False
+

@@ -1,0 +1,17 @@
+program ProJogAcertosErros;
+
+uses
+  Forms,
+  FrmPergunta1 in '..\..\Jogo de Conhecimento\FrmPergunta1.pas' {TFrmPergunta1},
+  U_DTM in '..\..\Jogo de Conhecimento\U_DTM.pas' {DTM: TDataModule},
+  U_FrmPerguntaUM in 'U_FrmPerguntaUM.pas' {FrmPergunta2};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TDTM, DTM);
+  Application.CreateForm(TTFrmPergunta1, TFrmPergunta1);
+  Application.CreateForm(TFrmPergunta2, FrmPergunta2);
+  Application.Run;
+end.

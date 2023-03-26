@@ -1,0 +1,150 @@
+object Form1: TForm1
+  Left = 220
+  Top = 121
+  Width = 575
+  Height = 364
+  Anchors = [akLeft, akTop, akRight, akBottom]
+  Caption = 'Envio de Torpedo'
+  Color = clBtnFace
+  Font.Charset = ANSI_CHARSET
+  Font.Color = clBlack
+  Font.Height = -11
+  Font.Name = 'Arial'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 14
+  object Label1: TLabel
+    Left = 8
+    Top = -1
+    Width = 51
+    Height = 14
+    Caption = 'Remetente'
+  end
+  object Label2: TLabel
+    Left = 10
+    Top = 38
+    Width = 71
+    Height = 14
+    Caption = 'Destinatario(s)'
+  end
+  object Label3: TLabel
+    Left = 8
+    Top = 77
+    Width = 52
+    Height = 14
+    Caption = 'Mensagem'
+  end
+  object Label4: TLabel
+    Left = 8
+    Top = 120
+    Width = 152
+    Height = 14
+    Caption = 'Status de Mensagens Enviadas'
+  end
+  object Label5: TLabel
+    Left = 184
+    Top = 32
+    Width = 3
+    Height = 14
+  end
+  object Label6: TLabel
+    Left = 248
+    Top = 120
+    Width = 3
+    Height = 14
+    Color = clSilver
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Arial'
+    Font.Style = []
+    ParentColor = False
+    ParentFont = False
+  end
+  object Edit1: TEdit
+    Left = 8
+    Top = 11
+    Width = 121
+    Height = 21
+    Color = clWhite
+    Enabled = False
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+  end
+  object Button1: TButton
+    Left = 453
+    Top = 11
+    Width = 75
+    Height = 25
+    Hint = 'Clique aqui para enviar'
+    Caption = '&ENVIAR'
+    Default = True
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clGreen
+    Font.Height = -11
+    Font.Name = 'Arial'
+    Font.Style = []
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 3
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 453
+    Top = 51
+    Width = 75
+    Height = 25
+    Caption = '&SAIR'
+    TabOrder = 4
+    OnClick = Button2Click
+  end
+  object Edit2: TEdit
+    Left = 8
+    Top = 51
+    Width = 321
+    Height = 22
+    Hint = 'Digite o nome dos usuarios na rede, separados por espa'#231'os'
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 1
+    OnChange = Edit2Change
+  end
+  object Edit3: TEdit
+    Left = 8
+    Top = 90
+    Width = 521
+    Height = 22
+    TabOrder = 2
+  end
+  object Memo1: TMemo
+    Left = 8
+    Top = 136
+    Width = 521
+    Height = 161
+    Color = clWhite
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    Lines.Strings = (
+      '')
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssBoth
+    TabOrder = 5
+  end
+  object Timer1: TTimer
+    Interval = 6000000
+    OnTimer = Timer1Timer
+    Left = 413
+  end
+end

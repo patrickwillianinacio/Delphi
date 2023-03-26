@@ -1,0 +1,15 @@
+program Principal;
+
+uses
+  Forms,
+  uPrincipal in 'uPrincipal.pas' {frmPrincipal},
+  uExcel in 'uExcel.pas' {frmGeracaoExcel},
+  uLogin in 'uLogin.pas' {frmLogin};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TfrmLogin, frmLogin);
+  Application.Run;
+end.

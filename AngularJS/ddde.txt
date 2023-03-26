@@ -1,0 +1,68 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/sandstone/bootstrap.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+<title>Indicadores Pleno</title>
+
+<div class="container" ng-app="ClienteApp" ng-controller="ClienteController">
+  <div class="form-group">
+    <div class="input-group">
+      <label>Nome:</label>
+      <input type="text" class="form-control" ng-model="nome">
+      <a href="#" class="btn btn-sucess btn-sm" ng-click="consultar();">Buscar</a>
+    </div>
+    <div class="input-group">
+      <label>Telefone:</label>
+      <input type="text" class="form-control" ng-model="telefone">
+      <a href="#" class="btn btn-sucess btn-sm" ng-click="consultar();">Buscar</a>
+    </div>
+  </div>
+
+  <br>
+  <div class="alert alert-info">
+    <p>Sort Type: {{ ordenacao }}</p>
+    <p>Sort Reverse: {{ ordenacaoReversa }}</p>
+    <p>Search Query: {{ filtro }}</p>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon"><i class="fa fa-search"></i>
+      </div>
+      <input type="text" class="form-control" placeholder="Filtrar" ng-model="filtro">
+    </div>
+  </div>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <td>
+          <a href="#" ng-click="ordenacao = 'nome'; ordenacaoReversa = !ordenacaoReversa">
+                        Nome
+                        <span ng-show="ordenacao == 'nome' && !ordenacaoReversa" class="fa fa-caret-down"></span>
+                        <span ng-show="ordenacao == 'nome' && ordenacaoReversa" class="fa fa-caret-up"></span>
+                    </a>
+        </td>
+        <td>
+          <a href="#" ng-click="ordenacao = 'telefone'; ordenacaoReversa = !ordenacaoReversa">
+                        Telefone
+                        <span ng-show="ordenacao == 'telefone' && !ordenacaoReversa" class="fa fa-caret-down"></span>
+                        <span ng-show="ordenacao == 'telefone' && ordenacaoReversa" class="fa fa-caret-up"></span>
+                    </a>
+        </td>
+        <td>
+          <a href="#" ng-click="ordenacao = 'cidade'; ordenacaoReversa = !ordenacaoReversa">
+                        Cidade
+                        <span ng-show="ordenacao == 'cidade' && !ordenacaoReversa" class="fa fa-caret-down"></span>
+                        <span ng-show="ordenacao == 'cidade' && ordenacaoReversa" class="fa fa-caret-up"></span>
+                    </a>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in cliente | orderBy:ordenacao:ordenacaoReversa | filter:filtro">
+        <td>{{ item.nome }}</td>
+        <td>{{ item.telefone }}</td>
+        <td>{{ item.cidade }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,1 +1,0 @@
-# Aplicações e estudos Delphi
